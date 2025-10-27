@@ -12,7 +12,7 @@ node_t *create_node(int data) {
   new->data = data;
   new->next = NULL;
   new->prev = NULL;
-  return NULL;
+  return new;
 }
 
 void free_node(node_t *head) {
@@ -95,6 +95,22 @@ bool push_node_in_head(node_t **head, node_t *node) {
   (*head)->prev = node;
   node->next = *head;
   *head = node;
+
+  return true;
+}
+
+bool pop_node_from_head(node_t **head) {
+  if (head == NULL || *head == NULL) {
+    return false;
+  }
+  node_t *temp = *head;
+
+  *head = (*head)->next;
+  if ((*head)->next != NULL) {
+    (*head)->prev = NULL;
+  }
+
+  free(temp);
 
   return true;
 }

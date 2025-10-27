@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdbool.h>
+
 typedef struct node {
   // the data stored in the node
   int data;
@@ -29,3 +31,7 @@ bool pop_node_from_tail(node_t **head);
 // push_node_in_head adds the given node at the beginning of the linked list.
 // It returns true if the operation is successful, false otherwise.
 bool push_node_in_head(node_t **head, node_t *node);
+
+// pop_node_from_head removes the first node from the linked list.
+// It returns true if the operation is successful, false otherwise.
+bool pop_node_from_head(node_t **head);
