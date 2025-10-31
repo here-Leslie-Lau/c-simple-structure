@@ -21,6 +21,15 @@ int main(void) {
 
   print_node(head);
 
+  for (int i = 0; i < 3; i++) {
+    if (!pop_node_from_head(&head)) {
+      printf("Failed to pop from head\n");
+      break;
+    }
+  }
+
+  print_node(head);
+
   free_node(head);
   return 0;
 }
